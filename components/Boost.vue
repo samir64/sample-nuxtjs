@@ -1,15 +1,9 @@
 <template>
-  <div class="boost-container">
+  <div class="boost-container" @click="openBoost">
     <div class="boost-card boost-back-card"></div>
     <div class="boost-card boost-front-card">
       <div class="boost-content">
-        <b-button
-          pill
-          variant="outline-secondary"
-          class="button boost-label"
-          @click="openBoost"
-          >BOOST</b-button
-        >
+        <div class="boost-label">BOOST</div>
         <div class="boost-description">
           <div class="boost-like-label">LIKING</div>
           <div class="boost-like-counter">{{ counter }}</div>
@@ -22,6 +16,13 @@
 <style>
 .boost-container {
   margin: 29px;
+  transition: margin-top 300ms ease-out;
+  cursor: pointer;
+}
+
+.boost-container:hover,
+.boost-container:hover .boost-front-card {
+  margin-top: 0;
 }
 
 .boost-card {
@@ -34,14 +35,20 @@
   width: 232px;
   height: 40px;
   margin-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff url("@/static/assets/plus-blue.svg") no-repeat center
+    center;
 }
 
 .boost-front-card {
   width: 256px;
   height: 133px;
-  margin-top: -30px;
+  margin-top: -29px;
   display: flex;
   align-items: stretch;
+  transition: margin-top 300ms ease-out;
 }
 
 .boost-content {
@@ -54,7 +61,9 @@
 
 .boost-label {
   color: #ccd0de !important;
-  border-color: #ccd0de !important;
+  border: 1px solid #ccd0de;
+  border-radius: 13px;
+  padding: 6px 12px;
   align-self: start;
   font: normal normal normal 1.1em Arial;
 }

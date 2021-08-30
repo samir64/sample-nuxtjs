@@ -1,7 +1,7 @@
 <template>
   <div class="create-boost-container">
     <div class="create-boost-card create-boost-back-card">
-      <img src="@/static/assets/plus.svg" />
+      <img src="@/static/assets/plus-gray.svg" />
     </div>
     <div class="create-boost-card create-boost-front-card">
       <div class="create-boost-content">
